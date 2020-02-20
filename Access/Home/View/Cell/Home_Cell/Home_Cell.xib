@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="Home_Cell" customModule="Access" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="137"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-UP-g4q">
+                        <rect key="frame" x="10" y="5" width="332" height="127"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4f-AS-i7e">
+                                <rect key="frame" x="10" y="23.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Yqe-eZ-ECK"/>
+                                    <constraint firstAttribute="height" constant="80" id="cCy-hV-cTg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f80-qW-r5R">
+                                <rect key="frame" x="100" y="34.5" width="222" height="18.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" red="0.7245374322" green="0.75696033240000005" blue="0.76121038200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym9-jk-cNH">
+                                <rect key="frame" x="100" y="58" width="60" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STAFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-ac-27L">
+                                        <rect key="frame" x="5" y="1.5" width="50" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WW0-ac-27L" secondAttribute="trailing" constant="5" id="BOI-YF-T6P"/>
+                                    <constraint firstAttribute="height" constant="20" id="RIM-b2-1nJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="Y0V-Im-ACz"/>
+                                    <constraint firstItem="WW0-ac-27L" firstAttribute="centerX" secondItem="ym9-jk-cNH" secondAttribute="centerX" id="ZKS-iF-sB7"/>
+                                    <constraint firstItem="WW0-ac-27L" firstAttribute="leading" secondItem="ym9-jk-cNH" secondAttribute="leading" constant="5" id="dI2-Ts-8vC"/>
+                                    <constraint firstItem="WW0-ac-27L" firstAttribute="centerY" secondItem="ym9-jk-cNH" secondAttribute="centerY" id="s7S-Tk-h4s"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f80-qW-r5R" firstAttribute="centerY" secondItem="f4f-AS-i7e" secondAttribute="centerY" constant="-20" id="7wl-oC-66i"/>
+                            <constraint firstItem="ym9-jk-cNH" firstAttribute="top" secondItem="f80-qW-r5R" secondAttribute="bottom" constant="5" id="Bce-b2-yq5"/>
+                            <constraint firstItem="f4f-AS-i7e" firstAttribute="centerY" secondItem="aLR-UP-g4q" secondAttribute="centerY" id="S2G-i2-K2L"/>
+                            <constraint firstItem="f4f-AS-i7e" firstAttribute="leading" secondItem="aLR-UP-g4q" secondAttribute="leading" constant="10" id="Xba-Jd-Aoi"/>
+                            <constraint firstItem="ym9-jk-cNH" firstAttribute="leading" secondItem="f4f-AS-i7e" secondAttribute="trailing" constant="10" id="cl4-zn-YeD"/>
+                            <constraint firstItem="f80-qW-r5R" firstAttribute="leading" secondItem="f4f-AS-i7e" secondAttribute="trailing" constant="10" id="cxK-80-GkC"/>
+                            <constraint firstAttribute="trailing" secondItem="f80-qW-r5R" secondAttribute="trailing" constant="10" id="sfa-45-nss"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="aLR-UP-g4q" secondAttribute="bottom" constant="5" id="3K7-6a-gYv"/>
+                    <constraint firstItem="aLR-UP-g4q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="94n-x7-G9D"/>
+                    <constraint firstItem="aLR-UP-g4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dd3-vv-ke8"/>
+                    <constraint firstAttribute="trailing" secondItem="aLR-UP-g4q" secondAttribute="trailing" constant="10" id="fhb-5P-jeA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="badge" destination="ym9-jk-cNH" id="Qt3-fl-NHU"/>
+                <outlet property="bg_view" destination="aLR-UP-g4q" id="WN6-og-qLP"/>
+                <outlet property="lab_center" destination="7wl-oC-66i" id="ey6-EC-Yun"/>
+                <outlet property="poster_img" destination="f4f-AS-i7e" id="NRo-MH-02q"/>
+                <outlet property="title_label" destination="f80-qW-r5R" id="kqT-r9-uxS"/>
+            </connections>
+            <point key="canvasLocation" x="155.07246376811597" y="121.54017857142857"/>
+        </tableViewCell>
+    </objects>
+</document>
