@@ -61,8 +61,8 @@ class Home_View: UIViewController {
             
             ViewModel.didTapcell =
             {
-//                let View = Detail_View()
-//                self.navigationController?.pushViewController(View, animated: true)
+                let View = Detail_View()
+                self.navigationController?.pushViewController(View, animated: true)
             }
              
          }

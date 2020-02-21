@@ -154,7 +154,7 @@ extension Home_View_Model: UITableViewDataSource,UITableViewDelegate
                 {
                     cell.poster_img.image = UIImage(named: "No_Image")
                 }
-//title
+//title 
                 if  let  title_lab = items[indexPath.row].login
                 {
                      cell.title_label.text = title_lab
@@ -170,8 +170,6 @@ extension Home_View_Model: UITableViewDataSource,UITableViewDelegate
                 {
                     cell.staff_badge(badge_icon: false)
                 }
-            
-           
 
                     return cell
            }
@@ -191,12 +189,18 @@ extension Home_View_Model: UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//         if let movie_id = items[indexPath.row].id
-//         {
-//             G_Poster_path = items[indexPath.row].poster_path
-//             G_detail_id = movie_id
-//             self.didTapcell?()
-//         }
+         if let avatar = items[indexPath.row].avatar_url
+         {
+             G_avatar_url = avatar  
+         }
+         if let login_id = items[indexPath.row].login
+         {
+             G_detail_id = login_id
+             self.didTapcell?()
+         }
+         
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
