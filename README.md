@@ -8,6 +8,11 @@ need pod install will execute project
 pod install
  
 ```
+## Demo
+
+![image](https://github.com/Yu-Yen-Chou/File/blob/master/Access_Img/access.gif)
+
+
 ## Usage
 Language: Swift  
 Architecture: MVVM  
@@ -119,9 +124,6 @@ Provides publicly available information about someone with a GitHub account.
 }
  
 ```
-## Demo
-
-![image](https://github.com/Yu-Yen-Chou/File/blob/master/Access_Img/access.gif)
 
 
 ## Example Code
