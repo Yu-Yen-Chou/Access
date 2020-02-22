@@ -2,6 +2,12 @@
 
 ![Platform](https://img.shields.io/cocoapods/p/JOEmojiableBtn.svg?style=flat)
 
+## Installation
+need pod install will execute project  
+```swift
+pod install
+ 
+```
 ## Usage
 Language: Swift  
 Architecture: MVVM  
@@ -157,9 +163,4 @@ func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
  
 ```
-## Installation
-need pod install will execute project  
-```swift
-pod install
- 
-```
+
