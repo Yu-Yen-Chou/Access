@@ -157,4 +157,9 @@ func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
  
 ```
-
+## Waring
+need pod install will execute project  
+```swift
+pod install
+ 
+```
