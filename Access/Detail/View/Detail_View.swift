@@ -9,9 +9,18 @@
 import UIKit
 import Kingfisher
 
+
+extension Detail_View: Detail_View_Model_Delegate
+{
+    func show_webview(path: String) {
+         UIApplication.shared.open(URL(string:path)!)
+    }
+    
+    
+}
 class Detail_View: UIViewController {
 
-   
+  
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var Poster_img: UIImageView!
     fileprivate let ViewModel = Detail_View_Model(dataService: DataService())
@@ -58,7 +67,7 @@ class Detail_View: UIViewController {
             Detail_Tab.bounces = false
             Detail_Tab?.dataSource = ViewModel
             Detail_Tab?.delegate = ViewModel
-           // ViewModel.delegate = self
+            ViewModel.delegate = self
             
 //Cell register
             let DetailCell_Nib = UINib(nibName: String(describing: detail_cell.self), bundle: nil)
@@ -99,4 +108,5 @@ class Detail_View: UIViewController {
          {
               self.navigationController?.popViewController(animated: true)
          }
+
 }

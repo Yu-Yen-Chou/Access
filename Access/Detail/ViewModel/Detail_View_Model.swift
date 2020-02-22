@@ -10,10 +10,19 @@ import Foundation
 import UIKit
 import Kingfisher
 
+var bio_str = "bio"
+var login_str = "login"
+var location_str = "location"
+var blog_str = "blog"
+
+protocol Detail_View_Model_Delegate: AnyObject {
+   
+    func  show_webview(path:String)
+}
 
 class Detail_View_Model: NSObject
 {
-   
+      weak var delegate: Detail_View_Model_Delegate?
       let selectedBackgroundView = UIView()
       var title_items = [String]()
       var items = [String:String]()
@@ -56,8 +65,8 @@ class Detail_View_Model: NSObject
 //bio
                         if let bio = detail.bio
                         {
-                            self.items["bio"] = bio
-                            self.title_items.append("bio")
+                            self.items[bio_str] = bio
+                            self.title_items.append(bio_str)
                         }
 //name
                         if let people_name = detail.name
@@ -67,20 +76,20 @@ class Detail_View_Model: NSObject
 //login
                         if let login = detail.login
                         {
-                             self.items["login"] = login
-                             self.title_items.append("login")
+                             self.items[login_str] = login
+                             self.title_items.append(login_str)
                         }
 //location
                         if let location = detail.location
                         {
-                            self.items["location"] = location
-                            self.title_items.append("location")
+                            self.items[location_str] = location
+                            self.title_items.append(location_str)
                         }
 //blog
                         if let blog = detail.blog,detail.blog != ""
                         {
-                             self.items["blog"] = blog
-                             self.title_items.append("blog")
+                             self.items[blog_str] = blog
+                             self.title_items.append(blog_str)
                         }
                       
                         
@@ -96,7 +105,7 @@ extension Detail_View_Model: UITableViewDataSource ,UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if(title_items[indexPath.row] == "location"||title_items[indexPath.row] == "login"||title_items[indexPath.row] == "blog")
+        if(title_items[indexPath.row] == login_str||title_items[indexPath.row] == login_str||title_items[indexPath.row] == blog_str)
         {
             return 80.0 //Date_Cell height
         }
@@ -116,7 +125,7 @@ extension Detail_View_Model: UITableViewDataSource ,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
-       if(title_items[indexPath.row] == "bio")
+       if(title_items[indexPath.row] == bio_str)
        {
             if let cell = tableView.dequeueReusableCell(withIdentifier:String(describing: bio_Cell.self), for: indexPath) as? bio_Cell
             {
@@ -125,7 +134,7 @@ extension Detail_View_Model: UITableViewDataSource ,UITableViewDelegate
                return cell
              }
        }
-       else if(title_items[indexPath.row] == "login")
+       else if(title_items[indexPath.row] == login_str)
        {
             if let cell = tableView.dequeueReusableCell(withIdentifier:String(describing: people_cell.self), for: indexPath) as? people_cell
             {
@@ -145,7 +154,7 @@ extension Detail_View_Model: UITableViewDataSource ,UITableViewDelegate
            if let cell = tableView.dequeueReusableCell(withIdentifier:String(describing: detail_cell.self), for: indexPath) as? detail_cell
            {
               cell.selectedBackgroundView = selectedBackgroundView
-              if(title_items[indexPath.row] == "location")
+              if(title_items[indexPath.row] == location_str)
               {
                 if let location = self.Model_Detail?.location
                 {
@@ -171,7 +180,20 @@ extension Detail_View_Model: UITableViewDataSource ,UITableViewDelegate
 
         return UITableViewCell()
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if(title_items[indexPath.row] == blog_str)
+        {
+            if let blog = self.Model_Detail?.blog
+            {
+                guard delegate?.show_webview(path: blog) != nil else
+                {
+                     return print("the delegate is not set")
+                }
+            }
+        }
+  
+    }
     
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
        {
